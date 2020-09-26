@@ -30,6 +30,25 @@
     </div>
 
     <p v-if="!canStream" v-html="errorMessage" />
+
+    <section>
+      <h3>{{ commentsLabel }}</h3>
+      <ul>
+        <li
+          v-for="comment in comments"
+          :key="comment.id"
+        >
+          <p>{{comment.name}}</p>
+          <a
+            :href="`mailto:${comment.emal}`"
+            target="_blank"
+          >
+            {{ comment.email }}
+          </a>
+          <p>{{ comment.body }}</p>
+        </li>
+      </ul>
+    </section>
   </section>
 </template>
 
@@ -46,7 +65,9 @@ export default {
       isStreaming: true,
       canvas: null,
       constraints: { video: true },
-      errorMessage: 'Sorry, no access to web camera.'
+      errorMessage: 'Sorry, no access to web camera.',
+      commentsLabel: 'Comments',
+      comments: []
     }
   },
 
@@ -54,6 +75,11 @@ export default {
     buttonLabel () {
       return this.isStreaming ? this.pauseLabel : this.resumeLabel
     }
+  },
+
+  async created () {
+    const { data } = await this.axios.get('https://jsonplaceholder.typicode.com/comments')
+    this.comments = data
   },
 
   async mounted () {
