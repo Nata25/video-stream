@@ -31,32 +31,22 @@
 
     <p v-if="!canStream" v-html="errorMessage" />
 
-    <section>
-      <h3>{{ commentsLabel }}</h3>
-      <ul>
-        <li
-          v-for="comment in comments"
-          :key="comment.id"
-        >
-          <p>{{comment.name}}</p>
-          <a
-            :href="`mailto:${comment.emal}`"
-            target="_blank"
-          >
-            {{ comment.email }}
-          </a>
-          <p>{{ comment.body }}</p>
-        </li>
-      </ul>
-    </section>
+    <Comments
+      :label="commentsLabel"
+      :items="comments"
+    />
   </section>
 </template>
 
 <script>
 import { checkNavigator } from '@/assets/js/video-stream'
+import Comments from './Comments'
 
 export default {
   name: 'Call',
+
+  components: { Comments },
+
   data () {
     return {
       resumeLabel: 'Resume video',
