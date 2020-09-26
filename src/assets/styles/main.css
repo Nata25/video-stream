@@ -1,0 +1,40 @@
+body {
+  /* variables */
+  --text-color: rgb(57, 57, 57);
+  --button-color: darkcyan;
+  
+  color: var(--text-color);
+}
+
+.page-view {
+  display: flex;
+  flex-basis: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.button {
+  padding: 15px 25px;
+  margin-top: 30px;
+  font-size: 20px;
+  text-transform: uppercase;
+  color: var(--button-color);
+  background-color: transparent;
+  text-decoration: none;
+  font-weight: bold;
+  border: 1px solid var(--button-color);
+  border-radius: 30px;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
