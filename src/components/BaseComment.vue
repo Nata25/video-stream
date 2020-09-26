@@ -30,7 +30,7 @@ export default {
   }
 
   .base-comment a {
-    color: var(--link-color);
+    color: var(--button-link-color);
     text-decoration: none;
   }
 

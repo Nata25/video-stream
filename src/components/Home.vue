@@ -12,13 +12,14 @@
 
 <script>
 import Leaf from './svg/Leaf.vue'
+import data from '@/assets/data'
 
 export default {
   name: 'HomePage',
   components: { Leaf },
   data () {
     return {
-      label: 'Join'
+      label: data.homeLabel
     }
   }
 }

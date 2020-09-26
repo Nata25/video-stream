@@ -33,6 +33,8 @@
 
     <Comments
       :label="commentsLabel"
+      :show="buttonLabelShow"
+      :hide="buttonLabelHide"
       :items="comments"
     />
   </section>
@@ -40,6 +42,7 @@
 
 <script>
 import { checkNavigator } from '@/assets/js/video-stream'
+import data from '@/assets/data'
 import Comments from './Comments'
 
 export default {
@@ -48,15 +51,25 @@ export default {
   components: { Comments },
 
   data () {
+    const {
+      resumeLabel,
+      pauseLabel,
+      errorMessage,
+      commentsLabel,
+      buttonLabelShow,
+      buttonLabelHide
+    } = data
     return {
-      resumeLabel: 'Resume video',
-      pauseLabel: 'Pause video',
+      resumeLabel,
+      pauseLabel,
+      errorMessage,
+      commentsLabel,
+      buttonLabelShow,
+      buttonLabelHide,
       canStream: false,
       isStreaming: true,
       canvas: null,
       constraints: { video: true },
-      errorMessage: 'Sorry, no access to web camera.',
-      commentsLabel: 'Comments',
       comments: []
     }
   },
@@ -134,7 +147,7 @@ export default {
   }
 
   .call-page__back {
-    color: var(--button-color);
+    color: var(--button-link-color);
   }
 
   .call-page__button {

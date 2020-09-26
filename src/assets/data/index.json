@@ -1,0 +1,9 @@
+{
+  "homeLabel": "Join",
+  "resumeLabel": "Resume video",
+  "pauseLabel": "Pause video",
+  "errorMessage": "Sorry, no access to web camera.",
+  "commentsLabel": "Comments",
+  "buttonLabelShow": "Show replies...",
+  "buttonLabelHide": "Hide replies..."
+}

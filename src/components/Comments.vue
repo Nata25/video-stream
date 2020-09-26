@@ -12,7 +12,7 @@
             class="collapse-button"
             @click="toggle(key)"
           >
-            {{ collapsed[key] ? buttonLabelShow : buttonLabelHide }}
+            {{ collapsed[key] ? show : hide }}
           </button>
 
           <ul :class="['secondary', collapsed[key] && 'collapsed']">
@@ -48,13 +48,13 @@ export default {
     items: {
       type: Array,
       required: true
-    }
+    },
+    show: String,
+    hide: String
   },
 
   data () {
     return {
-      buttonLabelShow: 'Show replies...',
-      buttonLabelHide: 'Hide replies...',
       collapsed: {}
     }
   },
