@@ -9,11 +9,11 @@ npm run build
 # navigate into the build output directory
 cd dist
 
-git init
+# git init
 git add -A
 git commit -m 'deploy'
 
 # if you are deploying to https://<USERNAME>.github.io/<REPO>
-git push -f git@github.com:Nata25/video-stream.git master:gh-pages
+git push -f git@github.com:Nata25/video-stream-build.git master:gh-pages
 
 cd -
