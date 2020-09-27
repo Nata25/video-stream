@@ -1,6 +1,6 @@
 <template>
   <section class="comments">
-      <h3>{{ label }}</h3>
+      <h2>{{ label }}</h2>
       <ul>
         <li
           v-for="(item) in slicedComments"
@@ -54,6 +54,8 @@ export default {
       type: Array,
       required: true
     },
+    id: [String, Number],
+    postId: [String, Number],
     show: String,
     hide: String
   },
@@ -107,8 +109,15 @@ export default {
 </script>
 
 <style scoped>
+  .comments {
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+    max-width: 900px;
+  }
+
   .comments > ul {
-    padding-bottom: 50px;
+    padding: 0 0 50px 0;
     overflow: hidden;
     list-style-type: none;
   }
@@ -136,5 +145,11 @@ export default {
     padding: 10px 15px;
     border: 0;
     background: white;
+  }
+
+  @media screen and (max-width: 1024px) {
+    .comments {
+      max-width: 90%;
+    }
   }
 </style>

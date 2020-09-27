@@ -1,7 +1,8 @@
 {
   "homeLabel": "Join",
-  "resumeLabel": "Resume video",
-  "pauseLabel": "Pause video",
+  "streamingLabel": "Streaming",
+  "resumeLabel": "Resume stream",
+  "pauseLabel": "Pause stream",
   "errorMessage": "Sorry, no access to web camera.",
   "commentsLabel": "Comments",
   "buttonLabelShow": "Show replies...",

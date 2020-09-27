@@ -1,5 +1,5 @@
 <template>
-  <section class="home page-view">
+  <main class="home page-view">
     <Leaf />
     <router-link
       :to="'/call'"
@@ -7,12 +7,12 @@
     >
       {{ label }}
     </router-link>
-  </section>
+  </main>
 </template>
 
 <script>
-import Leaf from './svg/Leaf.vue'
 import data from '@/assets/data'
+import Leaf from './svg/Leaf.vue'
 
 export default {
   name: 'HomePage',
@@ -26,10 +26,24 @@ export default {
 </script>
 
 <style>
-
   .home svg {
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
+  }
+
+  .home svg path {
+    animation: animate-stroke 2s forwards;
+  }
+
+  @keyframes animate-stroke {
+    from {
+      stroke-dasharray: 150;
+      stroke-dashoffset: -100%;
+    }
+    to {
+      stroke-dasharray: 1000;
+      stroke-dashoffset: 0;
+    }
   }
 
 </style>
